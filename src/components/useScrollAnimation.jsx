@@ -97,8 +97,8 @@ export const useScrollAnimation = (
           )
           .fromTo(
             car,
-            { x: -120, opacity: 0, rotate: 0 },
-            { x: 0, opacity: 1, rotate: 0, duration: 1.05, ease: "expo.out" },
+            { opacity: 0, scale: 0.98, rotate: 0 },
+            { opacity: 1, scale: 1, rotate: 0, duration: 1.05, ease: "expo.out" },
             "-=0.95"
           );
 

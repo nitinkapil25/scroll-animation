@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-[radial-gradient(circle_at_50%_20%,#fffaf2_0%,#fff3df_48%,#ffe9cc_100%)] flex items-center justify-center px-2 md:px-4"
+      className="relative h-screen w-full overflow-hidden bg-[radial-gradient(circle_at_50%_20%,#fffaf2_0%,#fff3df_48%,#ffe9cc_100%)] flex items-center justify-center"
     >
       {/* Ambient grid */}
       <div
@@ -65,7 +65,7 @@ const Hero = () => {
       {/* Headline + stats */}
       <div
         ref={textWrapperRef}
-        className="relative z-20 flex flex-col items-center text-center w-full max-w-none"
+        className="relative z-20 flex flex-col items-center text-center w-full max-w-none px-2 md:px-4"
       >
         <div className="relative translate-y-[-8px] sm:translate-y-[-12px] md:translate-y-0">
           <img
@@ -73,7 +73,7 @@ const Hero = () => {
             src="https://paraschaturvedi.github.io/car-scroll-animation/McLaren%20720S%202022%20top%20view.png"
             alt=""
             aria-hidden="true"
-            className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[-2vw] lg:left-[-3vw] top-[-34px] sm:top-[-36px] md:top-[-42px] w-[170px] sm:w-[220px] md:w-[260px] lg:w-[370px] pointer-events-none will-change-transform select-none"
+            className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[-120px] lg:left-[-150px] top-[-34px] sm:top-[-36px] md:top-[-42px] w-[170px] sm:w-[220px] md:w-[260px] lg:w-[370px] pointer-events-none will-change-transform select-none"
           />
 
           <div ref={headlineGroupRef} className="relative origin-center max-w-[96vw] md:max-w-none">
