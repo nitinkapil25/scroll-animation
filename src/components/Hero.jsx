@@ -24,19 +24,27 @@ const Hero = () => {
   const headline = "WELCOME ITZFLIZZ";
   const displayHeadline = "W E L C O M E   I T Z F L I Z Z";
   const renderHeadline = (letterClass) =>
-    displayHeadline.split("").map((char, index) =>
-      char === " " ? (
-        <span
-          key={`${letterClass}-space-${index}`}
-          aria-hidden="true"
-          className="inline-block w-[0.16em] md:w-[0.18em]"
-        />
-      ) : (
+    displayHeadline.split("").map((char, index, arr) => {
+      if (char === " ") {
+        const isWordGap = arr[index - 1] === " " || arr[index + 1] === " ";
+        return (
+          <span
+            key={`${letterClass}-space-${index}`}
+            aria-hidden="true"
+            className={
+              isWordGap
+                ? "inline-block w-[0.15em] sm:w-[0.18em] md:w-[0.22em] lg:w-[0.24em]"
+                : "inline-block w-[0.09em] sm:w-[0.11em] md:w-[0.14em] lg:w-[0.16em]"
+            }
+          />
+        );
+      }
+      return (
         <span key={`${letterClass}-char-${index}`} className={`${letterClass} inline-block`}>
           {char}
         </span>
-      )
-    );
+      );
+    });
 
   return (
     <section
@@ -59,48 +67,50 @@ const Hero = () => {
         ref={textWrapperRef}
         className="relative z-20 flex flex-col items-center text-center w-full max-w-none"
       >
-        <img
-          ref={carRef}
-          src="https://paraschaturvedi.github.io/car-scroll-animation/McLaren%20720S%202022%20top%20view.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[4vw] top-[-5px] sm:top-[-8px] md:top-[-42px] w-[118px] sm:w-[145px] md:w-[240px] lg:w-[350px] pointer-events-none will-change-transform select-none"
-        />
-
-        <div ref={headlineGroupRef} className="relative origin-center max-w-[96vw] md:max-w-none">
-          <h1
-            ref={baseHeadlineRef}
-            className="text-[1.05rem] sm:text-[1.35rem] md:text-6xl lg:text-7xl font-black uppercase text-orange-500/25 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.08] whitespace-nowrap"
-            style={{
-              perspective: "1000px",
-              textShadow: "0 4px 14px rgba(249,115,22,0.16)",
-            }}
-            aria-label={headline}
-          >
-            {renderHeadline("base-letter")}
-          </h1>
-
-          <h1
-            ref={revealHeadlineRef}
-            className="absolute inset-0 text-[1.05rem] sm:text-[1.35rem] md:text-6xl lg:text-7xl font-black uppercase text-orange-500 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.08] whitespace-nowrap"
-            style={{
-              clipPath: "inset(0 100% 0 0)",
-              opacity: 1,
-              textShadow: "0 4px 16px rgba(249,115,22,0.2)",
-            }}
+        <div className="relative translate-y-[-8px] sm:translate-y-[-12px] md:translate-y-0">
+          <img
+            ref={carRef}
+            src="https://paraschaturvedi.github.io/car-scroll-animation/McLaren%20720S%202022%20top%20view.png"
+            alt=""
             aria-hidden="true"
-          >
-            {renderHeadline("letter")}
-          </h1>
+            className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[-2vw] lg:left-[-3vw] top-[-34px] sm:top-[-36px] md:top-[-42px] w-[170px] sm:w-[220px] md:w-[260px] lg:w-[370px] pointer-events-none will-change-transform select-none"
+          />
 
-          <h1
-            ref={glowHeadlineRef}
-            className="absolute inset-0 text-[1.05rem] sm:text-[1.35rem] md:text-6xl lg:text-7xl font-black uppercase text-orange-400 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.08] whitespace-nowrap blur-[2px] md:blur-[2.5px] pointer-events-none"
-            style={{ opacity: 0 }}
-            aria-hidden="true"
-          >
-            {renderHeadline("glow-letter")}
-          </h1>
+          <div ref={headlineGroupRef} className="relative origin-center max-w-[96vw] md:max-w-none">
+            <h1
+              ref={baseHeadlineRef}
+              className="text-[1.55rem] sm:text-[1.9rem] md:text-7xl lg:text-8xl font-black uppercase text-orange-500/25 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.04] whitespace-nowrap"
+              style={{
+                perspective: "1000px",
+                textShadow: "0 4px 14px rgba(249,115,22,0.16)",
+              }}
+              aria-label={headline}
+            >
+              {renderHeadline("base-letter")}
+            </h1>
+
+            <h1
+              ref={revealHeadlineRef}
+              className="absolute inset-0 text-[1.55rem] sm:text-[1.9rem] md:text-7xl lg:text-8xl font-black uppercase text-orange-500 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.04] whitespace-nowrap"
+              style={{
+                clipPath: "inset(0 100% 0 0)",
+                opacity: 1,
+                textShadow: "0 4px 16px rgba(249,115,22,0.2)",
+              }}
+              aria-hidden="true"
+            >
+              {renderHeadline("letter")}
+            </h1>
+
+            <h1
+              ref={glowHeadlineRef}
+              className="absolute inset-0 text-[1.55rem] sm:text-[1.9rem] md:text-7xl lg:text-8xl font-black uppercase text-orange-400 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.04] whitespace-nowrap blur-[2px] md:blur-[2.5px] pointer-events-none"
+              style={{ opacity: 0 }}
+              aria-hidden="true"
+            >
+              {renderHeadline("glow-letter")}
+            </h1>
+          </div>
         </div>
 
         <Stats />

@@ -9,13 +9,13 @@ const Stats = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-8 mt-20 sm:mt-24 md:mt-36 w-full z-10 relative px-2 sm:px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-wrap justify-center gap-3 sm:gap-3 md:gap-8 mt-10 sm:mt-14 md:mt-36 w-full z-10 relative px-2 sm:px-4">
       {statsData.map((stat, i) => (
         <div 
           key={i} 
-          className="stat-card flex flex-col items-center justify-center py-3.5 px-3 sm:py-4 sm:px-3.5 md:py-5 md:px-4 w-[calc(50%-0.5rem)] sm:w-[180px] md:w-[220px] rounded-2xl md:rounded-3xl bg-white/60 border border-orange-100 backdrop-blur-[2px] will-change-transform"
+          className="stat-card flex flex-col items-center justify-center py-5 px-4 sm:py-5 sm:px-4 md:py-5 md:px-4 w-full sm:w-[190px] md:w-[220px] min-h-[122px] sm:min-h-[134px] md:min-h-0 rounded-2xl md:rounded-3xl bg-white/60 border border-orange-100 backdrop-blur-[2px] will-change-transform"
         >
-          <span className="text-3xl sm:text-[2rem] md:text-[3rem] leading-none font-extrabold text-orange-500 mb-1.5 md:mb-2 tracking-tight">
+          <span className="text-[2.1rem] sm:text-[2.15rem] md:text-[3rem] leading-none font-extrabold text-orange-500 mb-1.5 md:mb-2 tracking-tight">
             {stat.value}
           </span>
           <span className="text-[9px] sm:text-[10px] md:text-sm text-slate-500 uppercase tracking-[0.12em] md:tracking-[0.14em] text-center font-medium">
