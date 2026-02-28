@@ -64,7 +64,7 @@ export const useScrollAnimation = (
           gsap.set(revealHeadline, { clipPath: `inset(0 ${rightInset}% 0 0)` });
         };
 
-        gsap.set(revealHeadline, { clipPath: "inset(0 100% 0 0)" });
+        gsap.set(revealHeadline, { clipPath: "inset(0 100% 0 0)", opacity: 1 });
         gsap.set(glowHeadline, { opacity: 0 });
         gsap.set(baseHeadline, { opacity: 0.16 });
         gsap.set(headlineGroup, { scale: 1 });
@@ -153,15 +153,6 @@ export const useScrollAnimation = (
               ease: "none",
             },
             "drive+=0.05"
-          )
-          .to(
-            revealHeadline,
-            {
-              opacity: 1,
-              duration: 0.9,
-              ease: "none",
-            },
-            "drive-=0.02"
           )
           .to(
             baseHeadline,

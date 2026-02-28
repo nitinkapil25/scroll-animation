@@ -64,7 +64,7 @@ const Hero = () => {
           src="https://paraschaturvedi.github.io/car-scroll-animation/McLaren%20720S%202022%20top%20view.png"
           alt=""
           aria-hidden="true"
-          className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[4vw] top-[-5px] sm:top-[-8px] md:top-[-14px] w-[118px] sm:w-[145px] md:w-[240px] lg:w-[350px] pointer-events-none will-change-transform select-none"
+          className="absolute z-30 left-[2vw] sm:left-[3vw] md:left-[4vw] top-[-5px] sm:top-[-8px] md:top-[-42px] w-[118px] sm:w-[145px] md:w-[240px] lg:w-[350px] pointer-events-none will-change-transform select-none"
         />
 
         <div ref={headlineGroupRef} className="relative origin-center max-w-[96vw] md:max-w-none">
@@ -85,7 +85,7 @@ const Hero = () => {
             className="absolute inset-0 text-[1.05rem] sm:text-[1.35rem] md:text-6xl lg:text-7xl font-black uppercase text-orange-500 inline-flex flex-nowrap justify-center leading-[1.05] md:leading-[1.08] whitespace-nowrap"
             style={{
               clipPath: "inset(0 100% 0 0)",
-              opacity: 0.35,
+              opacity: 1,
               textShadow: "0 4px 16px rgba(249,115,22,0.2)",
             }}
             aria-hidden="true"
