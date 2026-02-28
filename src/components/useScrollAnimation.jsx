@@ -48,7 +48,7 @@ export const useScrollAnimation = (
         const scrollDot = containerRef.current.querySelector(".scroll-dot");
         const viewportWidth = window.innerWidth;
         const driveX =
-          viewportWidth < 640 ? "68vw" : viewportWidth < 1024 ? "78vw" : "86vw";
+          viewportWidth < 640 ? "74vw" : viewportWidth < 1024 ? "84vw" : "94vw";
         const driveY = viewportWidth < 640 ? "0.6vh" : "2vh";
         const scrollDistance = viewportWidth < 640 ? "+=105%" : "+=130%";
         const updateRevealFromCar = () => {
