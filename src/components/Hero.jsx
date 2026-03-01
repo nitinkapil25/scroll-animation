@@ -21,8 +21,8 @@ const Hero = () => {
     headlineGroupRef
   );
 
-  const headline = "WELCOME ITZFLIZZ";
-  const displayHeadline = "W E L C O M E   I T Z F L I Z Z";
+  const headline = "WELCOME ITZFIZZ";
+  const displayHeadline = "W E L C O M E   I T Z F LI Z Z";
   const renderHeadline = (letterClass) =>
     displayHeadline.split("").map((char, index, arr) => {
       if (char === " ") {
