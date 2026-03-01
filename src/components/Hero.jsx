@@ -22,7 +22,7 @@ const Hero = () => {
   );
 
   const headline = "WELCOME ITZFIZZ";
-  const displayHeadline = "W E L C O M E   I T Z F LI Z Z";
+  const displayHeadline = "W E L C O M E   I T Z F I Z Z";
   const renderHeadline = (letterClass) =>
     displayHeadline.split("").map((char, index, arr) => {
       if (char === " ") {
